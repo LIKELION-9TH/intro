@@ -5,10 +5,13 @@ from django.views.static import serve
 from django.conf.urls import url
 from django.conf import settings
 from rest_framework import routers
-from board.views import MusicViewSet
+from board.views import MusicViewSet, HobbyViewSet, LocationViewSet, MeViewSet
 
 router = routers.DefaultRouter()
 router.register('music', MusicViewSet)
+router.register('location', LocationViewSet)
+router.register('hobby', HobbyViewSet)
+router.register('me', MeViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
